@@ -264,15 +264,27 @@ def gate_d2_cdrh3_mutations(cdrh3):
     return ok, "" if ok else f"only {n} CDR-H3 mutations from trastuzumab, need >= 2"
 
 
-def gate_o2_point_mutations(chains, data_points):
+def gate_o2_point_mutations(heavy, data_points):
     """O2: strictly more than 2 point mutations from ANY provided data point.
+
+    Compares the candidate's **heavy V domain** against each data point's heavy
+    V domain. It used to compare `max(chains, key=len)`, which is wrong the
+    moment a candidate is an scFv: the longest chain is then the whole
+    VH-linker-VL construct, and measuring a 242-aa scFv against a 120-aa VH
+    data point counts the linker and the entire VL as ~137 extra "mutations".
+    Every scFv passed O2 for that reason alone. Checked against the provided
+    data (525,062 CDRH3 data points, `check_o2.py`): the VH-only form of our
+    submission failed O2 on 13 of 20 designs, the scFv form of the same 20
+    designs passed all 20, and the only difference was the appended VL. Like
+    is now compared with like.
 
     Without the data points this is unchecked, not passed.
     """
     if not data_points:
         return None, UNCHECKED["O2"]
-    query = max(chains, key=len)
-    worst = min(mutation_count(query, dp) for dp in data_points)
+    if not heavy:
+        return False, "no heavy V domain to compare against the data points"
+    worst = min(mutation_count(heavy, dp) for dp in data_points)
     ok = worst > 2
     return ok, "" if ok else f"only {worst} point mutations from the nearest data point"
 
@@ -315,7 +327,8 @@ def evaluate(model, cand, data_points):
         results["D2"] = gate_d2_cdrh3_mutations(cdrh3)
     elif track == "optimisation":
         results["O1"] = gate_o1_cdrh3_identity(cdrh3)
-        results["O2"] = gate_o2_point_mutations(chains, data_points)
+        results["O2"] = gate_o2_point_mutations(
+            heavy["seq"] if heavy else "", data_points)
     else:
         results["TRACK"] = (False, "no track assigned, and §2 requires it "
                                    "before generation")
@@ -503,8 +516,23 @@ def main():
 
     data_points = []
     if args.data_points:
-        data_points = ["".join(c["chains"]) for c in load_fasta(args.data_points)]
-        print(f"loaded {len(data_points)} data point(s) for gate O2")
+        # Reduce each data point to its heavy V domain, so O2 compares like
+        # with like whatever form the data point was given in (bare VH, scFv,
+        # or a chain carrying constant region). A data point with no readable
+        # heavy domain is dropped loudly rather than compared as raw sequence.
+        skipped = 0
+        for c in load_fasta(args.data_points):
+            doms = []
+            for chain in c["chains"]:
+                doms.extend(number_domains(model, chain, max_domains=3))
+            h = next((d for d in doms if d["chain_type"] == "H"), None)
+            if h:
+                data_points.append(h["seq"])
+            else:
+                skipped += 1
+        print(f"loaded {len(data_points)} data point(s) for gate O2, "
+              f"reduced to heavy V domain"
+              + (f"; {skipped} skipped with no heavy domain" if skipped else ""))
 
     path = Path(args.candidates)
     if not path.exists():
