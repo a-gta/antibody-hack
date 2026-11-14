@@ -1,0 +1,10 @@
+date          2026-11-14T12:27:09+00:00
+design image  quay.io/apheris/oslo-hackathon:apheris-rfd4-proteina-v0.3.0-her2-2026-11-07
+folding image quay.io/apheris/oslo-hackathon:apheris-boltz-v1.3.0-boltz2
+N             200
+TOPN          2
+SEED          42
+BOLTZ_SEED    42
+TSR           1
+OUT           runs/her2-n200-exploratory-seed42
+command       N=200 TOPN=2 IMG=her2-2026-11-07 SEED=42 BOLTZ_SEED=42 TSR=1 OUT=runs/her2-n200-exploratory-seed42 bash Scripts/run-her2.sh design
