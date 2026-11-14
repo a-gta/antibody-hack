@@ -1,8 +1,8 @@
 # antibody-hack — HER2 / trastuzumab optimisation
 
-Oslo AI × Antibodies Hackathon (Apheris, 14 November 2026). Target HER2,
-baseline trastuzumab, **optimisation track**. Only CDRH3 is varied; the VH
-framework and the VL are trastuzumab's own.
+**Team: Totally Claude Spies & the Boys.** Oslo AI × Antibodies Hackathon
+(Apheris, 14 November 2026). Target HER2, baseline trastuzumab, **optimisation
+track**. Only CDRH3 is varied; the VH framework and the VL are trastuzumab's own.
 
 Read [`SELECTION.md`](SELECTION.md) first. It fixes the selection rule and was
 committed before anything was ranked, and its §7 logs every departure from it.

@@ -1,9 +1,11 @@
 # Selection rule
 
-**Team:** `[NAME]`
+**Team:** Totally Claude Spies & the Boys
 **Target:** HER2 · **Baseline antibody:** trastuzumab
-**Tracks entered:** `[optimisation | de novo | both]`
-**Written at:** `[TIME]` — before any candidate was ranked.
+**Tracks entered:** optimisation only — 20 designs, 0 de novo (§5, §7)
+**Written at:** 2026-11-14 10:54 +0100 — before any candidate was ranked.
+Commit `79c7024`; the first score was not computed until 16:24, so the git
+history, not this line, is the evidence.
 
 This file fixes how we rank our candidates and which 20 we submit. It is
 committed before we have ranked anything, so our selection is a method and not
@@ -60,7 +62,11 @@ no slot is lost to a rejection we could have predicted.
 **Track is assigned before generation, never after.** A design that misses its
 own track's criteria is rejected outright, not reclassified.
 
-Counts: generated `[N]` → passed abguard `[N]`.
+Counts: generated **400** (200 novel seed 50 + 200 exploratory seed 42) →
+passed abguard **not run**. `abguard` was never available on the VM, so this
+line cannot be filled as written; `gates.py` is our stand-in and reports
+**20/20 clean PASS** on the submitted set, with G1–G4, O1 and O2 all actually
+checked. abguard's verdict on submission remains the authoritative one.
 
 ---
 
@@ -142,6 +148,11 @@ divides equally between tracks, so entering both doubles our chances of placing.
 - A gate kills every candidate → relax that gate **once**, logged, new threshold
   stated before re-running.
 - Apheris OpenFold unavailable → R1 falls back to `[TOOL]`, stated in the pitch.
+  **No fallback was needed.** R1 runs on OpenFold3 (`of3ob`), folding seed 42,
+  one diffusion sample, over 142 of the 200 novel seed-50 designs — the metrics
+  are in `results/vm/novel-200-of3ob-refold-metrics.csv`. What did happen is the
+  reverse: R1 was abandoned at 16:24 for want of inputs and restored at 20:15
+  when those outputs were recovered off the VM. Both are logged in §7.
 
 Anything else: the rule stands.
 
