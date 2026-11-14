@@ -27,7 +27,11 @@ designs that improve all three."*
 a credible attempt at all three simultaneously. A candidate predicted to win on
 affinity alone is ranked below one predicted to win narrowly on all three.
 
-> `[One sentence: who needs an improved trastuzumab and what they would do with it.]`
+> Teams building HER2-targeted antibody–drug conjugates need a domain IV binder
+> that holds trastuzumab's epitope while binding tighter and surviving
+> conjugation and storage, because there the antibody is the delivery vehicle and
+> affinity and thermostability decide how much payload reaches the tumour instead
+> of the circulation.
 
 ---
 
