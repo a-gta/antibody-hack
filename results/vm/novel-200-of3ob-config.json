@@ -1,0 +1,14 @@
+{
+  "missing_msas": "fail",
+  "num_diffusion_samples": 1,
+  "query_failures": "skip",
+  "schema_version": "foundry.cli.v1",
+  "seeds": [
+    42
+  ],
+  "template_paths": [
+    "../prepared/holo/template.cif"
+  ],
+  "weights": "/app/weights/of3-ob-2025-06-30-174k.pt",
+  "write_detailed_scores": true
+}
