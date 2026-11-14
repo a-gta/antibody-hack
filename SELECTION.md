@@ -72,11 +72,17 @@ brief names.
 
 | Rank | Score | Source | Use |
 |------|-------|--------|-----|
-| R1 | `min_ipae` | refold-score | primary ordering |
-| R2 | `iptm` | refold-score | tiers, thresholded per §4 |
-| R3 | `binder_plddt` | refold-score | tiers |
-| R4 | Thermostability proxy | `[ThermoMPNN / ESM-IF]` | **promotes A-tier to S-tier — not a tie-break** |
-| R5 | Expression proxy | `[Aggrescan3D / SoluProt / NetSolP]` | a design that cannot be expressed is not measured at all |
+| R1 | `min_ipae` | Apheris `refold-score` | primary ordering |
+| R2 | `iptm` | Apheris `refold-score` or `openfold3` | tiers, thresholded per §4 |
+| R3 | `binder_plddt` | Apheris `refold-score` | tiers |
+| R4 | Binding ΔΔG | Nebius `stab-ddg` | **optimisation track: the affinity axis directly** |
+| R5 | Thermostability proxy | ESM-IF1 / AntiFold log-likelihood, germline closeness | **promotes A-tier to S-tier — not a tie-break** |
+| R6 | Expression proxy | Aggrescan3D / SoluProt / NetSolP | a design that cannot be expressed is never measured |
+
+**Boltz2 co-folds give no ipTM.** They return confidence and pTM only. We use
+Boltz2 for breadth and interface contact counts, never as a source of the ipTM
+that §4 thresholds. Calibrating on one score and ranking on another would make
+the threshold meaningless.
 
 Model choice: **`her2-novel-2026-11-09`**, because the brief's own benchmark
 puts it at 86% passing the novelty filter with 6.8 Å interface error. We

@@ -1,4 +1,16 @@
+# --- secrets: your submission repo is PUBLIC ---
+*.private.json
+credentials*.json
+*.pem
+*.key
+.env
+
+# --- environment ---
 .venv/
 __pycache__/
 *.pyc
 .DS_Store
+
+# --- large inputs, not secrets ---
+*.tar
+*.tar.gz
