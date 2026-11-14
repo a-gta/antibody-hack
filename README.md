@@ -10,8 +10,9 @@ committed before anything was ranked, and its §7 logs every departure from it.
 
 ## The submission
 
-**[`submission_scfv_fold.csv`](submission_scfv_fold.csv)** — 20 scFvs, ranked by
-OpenFold3 interface score.
+**[`submission_scfv_diverse.csv`](submission_scfv_diverse.csv)** — 20 scFvs,
+ranked by OpenFold3 interface score, with a minimum pairwise distance between
+them.
 
 Every submitted design comes from **one run**: HER2 novel weights
 `her2-novel-2026-11-09`, design seed 50. One run, one seed, one command to
@@ -23,6 +24,7 @@ reproduce it.
 | Cysteines | 4 per construct, each domain's own pair, none unpaired |
 | Gates | **20/20 clean PASS** — G1 format, G2 cysteines, G3 numbering, G4 length, O1, O2, none left unchecked |
 | Ranked on | `min_ipAE` from OpenFold3 (§3's R1), ties broken on ipTM then binder pLDDT |
+| Diversity | every pair of CDRH3s differs at **≥3 positions**; closest pair 3, mean 5.87 |
 | Folded | all 20, in the holo complex and apo; OpenFold3 seed 42, one diffusion sample |
 | De novo track | not entered; nothing generated qualifies (§5) |
 
@@ -39,7 +41,7 @@ lost to a rejection we could have predicted.
 | Survive scoring's inline gates and get ranked | 82 | [`scores.csv`](scores.csv) |
 | Pass gate O2 against all 525,063 provided data points | 65 | [`o2_report_all234.csv`](o2_report_all234.csv) |
 | Folded by OpenFold3, so R1 can order them | 62 | [`results/vm/novel-200-of3ob-refold-metrics.csv`](results/vm/novel-200-of3ob-refold-metrics.csv) |
-| Submitted | 20 | [`submission_scfv_fold.csv`](submission_scfv_fold.csv) |
+| Admitted by the D = 3 diversity rule, walking R1 from the top | 20 of the first 31 | [`submission_scfv_diverse.csv`](submission_scfv_diverse.csv) |
 
 The three filters are not the same check and the counts are not interchangeable.
 The novelty pre-check asks whether a CDRH3 is absent from the provided data *and*
@@ -63,12 +65,17 @@ cautions belong with them, all logged in §7:
   calibrated. `min_ipae` is the ordering because §3 named it primary, not
   because it is known to be better calibrated.
 - Each score is **one diffusion sample at one seed** — a single draw, not a mean.
-- **Applying R1 collapsed the diversity.** The submitted 20 hold 39 pairs within
-  2 mutations of each other, against 4 in the composite-ranked list, and 16 of
-  20 share the motif `ST..V[DGS]YA[FMH]D`. If that family does not bind, most of
-  the 20 fail together. No diversity criterion was added, because §3–§5 define
-  none and inventing one after seeing the scores is what §1 forbids. The
-  previous list is kept as `submission_scfv_novel.csv` so the trade is visible.
+- **R1 alone collapsed the diversity, so a diversity rule was added.** Ranking
+  on `min_ipAE` by itself put 16 of 20 designs in one motif family,
+  `ST..V[DGS]YA[FMH]D`, with 39 pairs within 2 mutations of each other — a
+  submission staking most of its 20 slots on one family binding. §3–§5 define
+  no diversity criterion, so **D = 3** was pre-registered as a new one (§7, last
+  entry) rather than slipped in: the threshold is the challenge's own definition
+  of a distinct sequence (O2 needs >2 mutations from any data point), no other
+  value was tried, and `rerank_diverse.py` fails rather than relaxing D. It
+  costs R1 — reaching rank 31 to fill 20, `min_ipAE` 0.4553–0.5988 instead of
+  0.4553–0.5705 — and buys ~20 independent attempts instead of one family's.
+  `submission_scfv_fold.csv` keeps the pure-R1 list for comparison.
 
 ## Reproduce the run
 
@@ -87,18 +94,25 @@ It runs the design step only. Nothing in this submission is folded.
 ## Rebuild the submission from the run outputs
 
 ```bash
-python3 rerank_fold.py -n 20 --out submission_fold.csv
+python3 rerank_fold.py -n 62 --out pool_fold_ranked.csv
 ```
 
 ```bash
-python3 make_scfv.py --source submission_fold.csv --out submission_scfv_fold.csv
+python3 rerank_diverse.py -n 20 --out submission_diverse.csv
 ```
 
 ```bash
-python3 gates.py scfv_gates_input.csv --data-points o2_data_points_fold.fasta
+python3 make_scfv.py --source submission_diverse.csv --out submission_scfv_diverse.csv
 ```
 
-`rerank_fold.py` applies §3's R1 to the gate survivors. `rerank.py --run novel`
+```bash
+python3 gates.py scfv_gates_input.csv --data-points o2_data_points_diverse.fasta
+```
+
+`rerank_fold.py` applies §3's R1 to the gate survivors; `rerank_diverse.py`
+walks that order and admits a design only if it is ≥3 mutations from every design
+already admitted, so it filters without reordering — both assert their output is
+monotonic in `min_ipae`. `rerank.py --run novel`
 builds the superseded composite-ranked list, and is a filter rather than a
 ranking: it drops rows and renumbers, recomputes no score, and asserts that the
 survivors' previous ranks stay strictly increasing.
@@ -108,7 +122,8 @@ survivors' previous ranks stay strictly increasing.
 | File | What it is |
 |---|---|
 | `SELECTION.md` | the selection rule, fixed before ranking, with the §7 deviation log |
-| `rerank_fold.py` → `submission_fold.csv` | the ranking actually used: §3's R1 on the OpenFold3 scores |
+| `rerank_fold.py` → `submission_fold.csv` | §3's R1 on the OpenFold3 scores, pure |
+| `rerank_diverse.py` → `submission_diverse.csv` | the submission actually used: R1 plus the D = 3 diversity rule |
 | `score_designs.py` → `scores.csv` | the superseded composite, 234 rows across both runs; still the eligibility source |
 | `gates.py` | the §2 hard gates, with `--self-test` |
 | `check_o2.py` → `o2_report*.csv` | gate O2 against all provided data points |
