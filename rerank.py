@@ -27,7 +27,14 @@ survivors is untouched: if A outranked B before, it still does.
 `novel` and `exploratory` runs reuse ids), so every join is on
 (design_id, cdrh3) and `run` is carried through to the output.
 
+`--run` restricts eligibility to one generator run. It is the same kind of
+operation as the O2 filter -- drop rows, renumber, recompute nothing -- and the
+same assertion guards it: relative order among the survivors is unchanged. But
+unlike O2 it is not a hard gate from §2, so it changes which molecules fill the
+20 slots on a judgement rather than on a rule, and must be logged in §7.
+
 Run:  python3 rerank.py [--o2-report o2_report_all234.csv] [-n 20]
+                        [--run novel] [--out submission_o2.csv]
 Out:  submission_o2.csv   the new ranked list, same columns as submission.csv
                           plus `run`, ready for make_scfv.py --source
 """
@@ -47,6 +54,11 @@ def main():
                     help="check_o2.py output covering all ranked designs")
     ap.add_argument("-n", type=int, default=20,
                     help="list length (§5: 16 assuming a win, plus 4 spares)")
+    ap.add_argument("--run", default=None,
+                    help="restrict eligibility to this generator run "
+                         "(e.g. novel); logged as a §7 deviation")
+    ap.add_argument("--out", default=os.path.join(HERE, "submission_o2.csv"),
+                    help="where to write the ranked list")
     args = ap.parse_args()
 
     for p in (args.scores, args.o2_report):
@@ -76,6 +88,15 @@ def main():
                  if verdict[(r["design_id"], r["cdrh3"])]["o2_verdict"] == "PASS"]
     print(f"{len(scores)} ranked designs, {len(survivors)} pass O2, "
           f"{len(scores) - len(survivors)} dropped")
+
+    if args.run:
+        runs = sorted({r["run"] for r in scores})
+        if args.run not in runs:
+            sys.exit(f"no ranked design has run={args.run!r}; runs present: {runs}")
+        before = len(survivors)
+        survivors = [r for r in survivors if r["run"] == args.run]
+        print(f"restricted to run={args.run}: {len(survivors)} of those "
+              f"{before} remain")
     if len(survivors) < args.n:
         sys.exit(f"only {len(survivors)} survivors, need {args.n}")
 
@@ -96,7 +117,7 @@ def main():
             "min_mut_from_data_point": v["min_mut_from_data_point"],
         })
 
-    dst = os.path.join(HERE, "submission_o2.csv")
+    dst = args.out
     with open(dst, "w", newline="") as fh:
         w = csv.DictWriter(fh, fieldnames=list(out[0]))
         w.writeheader()
@@ -123,7 +144,8 @@ def main():
               f"{r['run']:<12} {r['cdrh3']:<11} {r['composite_score']:>7} "
               f"{r['min_mut_from_data_point']:>5}")
     print()
-    print(f"wrote submission_o2.csv (top {args.n}, order preserved from scores.csv)")
+    print(f"wrote {os.path.basename(dst)} (top {args.n}, order preserved "
+          f"from scores.csv)")
 
 
 if __name__ == "__main__":
