@@ -1,0 +1,207 @@
+525,063 provided CDRH3s loaded from /home/hackathon/hackathon-data/her2-trastuzumab
+
+design           cdrh3         mut  pass   note
+------------------------------------------------------------------------------
+her2_cdrh3_0     WASLYYYYFD      7  yes    not in provided data
+her2_cdrh3_1     EASYLDGAFD      8  yes    not in provided data
+her2_cdrh3_2     SLSLTDYAMD      6  yes    not in provided data
+her2_cdrh3_3     SLSLSNYAFD      7  yes    not in provided data
+her2_cdrh3_4     STASVGYAMD      6  yes    not in provided data
+her2_cdrh3_5     SLTLSNYAFD      7  yes    not in provided data
+her2_cdrh3_6     STYSVDYAFD      7  yes    not in provided data
+her2_cdrh3_7     WGPPGFYAFD      3  NO     already measured: FACS high  [exactly 3: at the 70 % identity limit, no margin]
+her2_cdrh3_8     WGSSSFYAMD      3  yes    not in provided data  [exactly 3: at the 70 % identity limit, no margin]
+her2_cdrh3_9     WGSLHFYAFD      4  yes    not in provided data
+her2_cdrh3_10    STSSVDYAMD      6  yes    not in provided data
+her2_cdrh3_11    DMPGSSYAFD      7  yes    not in provided data
+her2_cdrh3_12    SLSFSDYSFD      8  yes    not in provided data
+her2_cdrh3_13    WGSSGFYAFD      3  yes    not in provided data  [exactly 3: at the 70 % identity limit, no margin]
+her2_cdrh3_14    WASLYEYYFD      7  yes    not in provided data
+her2_cdrh3_15    YGSDSLLAFD      6  yes    not in provided data
+her2_cdrh3_16    SMSLTDFAFD      8  yes    not in provided data
+her2_cdrh3_17    SLPGVSWAFD      8  yes    not in provided data
+her2_cdrh3_18    SLSLTNFAFD      8  yes    not in provided data
+her2_cdrh3_19    WGPSGFYAFD      3  yes    not in provided data  [exactly 3: at the 70 % identity limit, no margin]
+her2_cdrh3_20    STASVGYAHD      7  yes    not in provided data
+her2_cdrh3_21    SLSLYDYSFD      8  yes    not in provided data
+her2_cdrh3_22    STRAVDYAMD      6  yes    not in provided data
+her2_cdrh3_23    SLSLSNFAFD      8  yes    not in provided data
+her2_cdrh3_24    YASYTSYYFD      8  yes    not in provided data
+her2_cdrh3_25    DLAPYYYVFD      8  yes    not in provided data
+her2_cdrh3_26    WASTTDYYFD      7  yes    not in provided data
+her2_cdrh3_27    WGPSGFYAFD      3  yes    not in provided data  [exactly 3: at the 70 % identity limit, no margin]
+her2_cdrh3_28    STSAVDYAFD      7  yes    not in provided data
+her2_cdrh3_29    WRSGVLYAFD      6  yes    not in provided data
+her2_cdrh3_30    WGPSHFYAFD      4  yes    not in provided data
+her2_cdrh3_31    SLSFSSYAFD      7  yes    not in provided data
+her2_cdrh3_32    YKSLSDYYFD      8  yes    not in provided data
+her2_cdrh3_33    WKSLHEYYFD      7  yes    not in provided data
+her2_cdrh3_34    WGSSTFYAFD      4  yes    not in provided data
+her2_cdrh3_35    STSSVGYAMD      6  yes    not in provided data
+her2_cdrh3_36    WSSAYGYAMD      5  yes    not in provided data
+her2_cdrh3_37    WGSLTFYAFD      4  yes    not in provided data
+her2_cdrh3_38    STSSVDYAFD      7  yes    not in provided data
+her2_cdrh3_39    SLSLSNYAFD      7  yes    not in provided data
+her2_cdrh3_40    DGSGSIYAFD      6  yes    not in provided data
+her2_cdrh3_41    DMPGSSMAFD      8  yes    not in provided data
+her2_cdrh3_42    WGSGSLYAMD      4  yes    not in provided data
+her2_cdrh3_43    DLSSVYRAFD      8  yes    not in provided data
+her2_cdrh3_44    WGPYGFYAFD      3  NO     already measured: FACS high  [exactly 3: at the 70 % identity limit, no margin]
+her2_cdrh3_45    MPSGFFRAHD      7  yes    not in provided data
+her2_cdrh3_46    WASLSEYYHD      7  yes    not in provided data
+her2_cdrh3_47    STAAVGYAMD      6  yes    not in provided data
+her2_cdrh3_48    WTSSVDYAHD      6  yes    not in provided data
+her2_cdrh3_49    WTAAAGYAFD      6  yes    not in provided data
+her2_cdrh3_50    SGSYPYYYFD      7  yes    not in provided data
+her2_cdrh3_51    SLTPSVFAFD      8  yes    not in provided data
+her2_cdrh3_52    WASLSDYYFD      7  yes    not in provided data
+her2_cdrh3_53    WGSSHFYAFD      4  yes    not in provided data
+her2_cdrh3_54    SLSLTNFAFD      8  yes    not in provided data
+her2_cdrh3_55    SLSSSDYAFD      7  yes    not in provided data
+her2_cdrh3_56    DLAFPYLAFD      8  yes    not in provided data
+her2_cdrh3_57    SLSLSDYSFD      8  yes    not in provided data
+her2_cdrh3_58    WSAAVGYAHD      6  yes    not in provided data
+her2_cdrh3_59    STSAYDYAFD      7  yes    not in provided data
+her2_cdrh3_60    WTSSVGYAMD      5  yes    not in provided data
+her2_cdrh3_61    DLSSSVYAFD      7  yes    not in provided data
+her2_cdrh3_62    YYSTSHYYYD      8  yes    not in provided data
+her2_cdrh3_63    SLSYSNHAFD      8  yes    not in provided data
+her2_cdrh3_64    WSSAVDYAMD      5  yes    not in provided data
+her2_cdrh3_65    YHSTSKYYFD      8  yes    not in provided data
+her2_cdrh3_66    SLSSADYAFD      7  yes    not in provided data
+her2_cdrh3_67    SLSYYNEAFD      8  yes    not in provided data
+her2_cdrh3_68    SRYSVGWAMD      7  yes    not in provided data
+her2_cdrh3_69    WGSPGFYAMD      2  NO     not in provided data  [<3 mutations: >70 % identical to trastuzumab, fails]
+her2_cdrh3_70    SLSLSSYAFD      7  yes    not in provided data
+her2_cdrh3_71    STSSVDYAFD      7  yes    not in provided data
+her2_cdrh3_72    DLSSSNFAFD      8  yes    not in provided data
+her2_cdrh3_73    SWAPYAEVFD      9  yes    not in provided data
+her2_cdrh3_74    YASLHDYYFD      8  yes    not in provided data
+her2_cdrh3_75    DLSFPYYAFD      7  yes    not in provided data
+her2_cdrh3_76    DFGGSVHAFD      7  yes    not in provided data
+her2_cdrh3_77    SSSSSSSVSS     10  yes    not in provided data
+her2_cdrh3_78    WGPSGFYAMD      2  NO     not in provided data  [<3 mutations: >70 % identical to trastuzumab, fails]
+her2_cdrh3_79    WGSTSFYAFD      4  yes    not in provided data
+her2_cdrh3_80    WASSTFYAFD      5  yes    not in provided data
+her2_cdrh3_81    SSYGSDYAFD      7  yes    not in provided data
+her2_cdrh3_82    SLPGDDEAFD      8  yes    not in provided data
+her2_cdrh3_83    DMSLTNFAFD      8  yes    not in provided data
+her2_cdrh3_84    DLYPNSYAFD      7  yes    not in provided data
+her2_cdrh3_85    WGSLSFYAMD      3  yes    not in provided data  [exactly 3: at the 70 % identity limit, no margin]
+her2_cdrh3_86    SAGSYYYYFD      7  yes    not in provided data
+her2_cdrh3_87    STSAVSYAMD      6  yes    not in provided data
+her2_cdrh3_88    STSAVDYAMD      6  yes    not in provided data
+her2_cdrh3_89    YYFSSSHFYS     10  yes    not in provided data
+her2_cdrh3_90    SMGRMDGAFD      7  yes    not in provided data
+her2_cdrh3_91    WGPYGFYAMD      2  NO     already measured: FACS high  [<3 mutations: >70 % identical to trastuzumab, fails]
+her2_cdrh3_92    WNAAYGYAFD      6  yes    not in provided data
+her2_cdrh3_93    WGSGTLLAFD      6  yes    not in provided data
+her2_cdrh3_94    DLSSSNFAFD      8  yes    not in provided data
+her2_cdrh3_95    WRHGVFYAFD      5  yes    not in provided data
+her2_cdrh3_96    SASLSDYYFD      8  yes    not in provided data
+her2_cdrh3_97    WNPAYGYAMD      5  yes    not in provided data
+her2_cdrh3_98    TTAAVGYAHD      7  yes    not in provided data
+her2_cdrh3_99    STPAVGYAFD      7  yes    not in provided data
+her2_cdrh3_100   SRSSVGWAMD      7  yes    not in provided data
+her2_cdrh3_101   WTSAVDYAHD      6  yes    not in provided data
+her2_cdrh3_102   WGSGSLVAFD      6  yes    not in provided data
+her2_cdrh3_103   SLSLSDYSFD      8  yes    not in provided data
+her2_cdrh3_104   STAAVGYAFD      7  yes    not in provided data
+her2_cdrh3_105   STAAYGYAFD      7  yes    not in provided data
+her2_cdrh3_106   SATVTDYYFD      8  yes    not in provided data
+her2_cdrh3_107   DASLSAYYFD      8  yes    not in provided data
+her2_cdrh3_108   DLYLNNYAFD      7  yes    not in provided data
+her2_cdrh3_109   YVPFSVPAFD      8  yes    not in provided data
+her2_cdrh3_110   WGSLHFYAFD      4  yes    not in provided data
+her2_cdrh3_111   STSAVDYAFD      7  yes    not in provided data
+her2_cdrh3_112   STAAVSYAFD      7  yes    not in provided data
+her2_cdrh3_113   WGSLTFYAFD      4  yes    not in provided data
+her2_cdrh3_114   SRASVDYAFD      7  yes    not in provided data
+her2_cdrh3_115   WTASVGYAFD      6  yes    not in provided data
+her2_cdrh3_116   YASLYDYYFD      8  yes    not in provided data
+her2_cdrh3_117   WGSPGFYAFD      3  yes    not in provided data  [exactly 3: at the 70 % identity limit, no margin]
+her2_cdrh3_118   SRSSVGYAFD      7  yes    not in provided data
+her2_cdrh3_119   YYDPSSSSYS     10  yes    not in provided data
+her2_cdrh3_120   WGSLSFYAMD      3  yes    not in provided data  [exactly 3: at the 70 % identity limit, no margin]
+her2_cdrh3_121   YGPGSLLAFD      7  yes    not in provided data
+her2_cdrh3_122   DLAFPYYAFD      7  yes    not in provided data
+her2_cdrh3_123   STSSVAYAMD      6  yes    not in provided data
+her2_cdrh3_124   SLSLSYEYFD      9  yes    not in provided data
+her2_cdrh3_125   YASLSEYYFD      8  yes    not in provided data
+her2_cdrh3_126   SASLGDFAFD      7  yes    not in provided data
+her2_cdrh3_127   SAAYYDYYFD      8  yes    not in provided data
+her2_cdrh3_128   ERRDYPGVFD      8  yes    not in provided data
+her2_cdrh3_129   DLSSSDFAFD      8  yes    not in provided data
+her2_cdrh3_130   STSAYGYAFD      7  yes    not in provided data
+her2_cdrh3_131   STASVGYAMD      6  yes    not in provided data
+her2_cdrh3_132   STAAVDYAMD      6  yes    not in provided data
+her2_cdrh3_133   STAAVDYAMD      6  yes    not in provided data
+her2_cdrh3_134   SADLYYDYFD      9  yes    not in provided data
+her2_cdrh3_135   YMPGSALAYD      8  yes    not in provided data
+her2_cdrh3_136   DLSHSEFAFD      8  yes    not in provided data
+her2_cdrh3_137   WASSSDYYFD      7  yes    not in provided data
+her2_cdrh3_138   WASLSDYYFD      7  yes    not in provided data
+her2_cdrh3_139   SLSLYDYSFD      8  yes    not in provided data
+her2_cdrh3_140   WASLSEYYFD      7  yes    not in provided data
+her2_cdrh3_141   WGSLSFYAYD      4  yes    not in provided data
+her2_cdrh3_142   WASLYDYYFD      7  yes    not in provided data
+her2_cdrh3_143   WGSLTFYAFD      4  yes    not in provided data
+her2_cdrh3_144   DMPYPALAFD      8  yes    not in provided data
+her2_cdrh3_145   WASLTDYYFD      7  yes    not in provided data
+her2_cdrh3_146   STLAVDYAFD      7  yes    not in provided data
+her2_cdrh3_147   WGPSGFYAFD      3  yes    not in provided data  [exactly 3: at the 70 % identity limit, no margin]
+her2_cdrh3_148   DLLSYPSAFD      8  yes    not in provided data
+her2_cdrh3_149   SLSLSDFAHD      8  yes    not in provided data
+her2_cdrh3_150   WRSTSEYYFD      7  yes    not in provided data
+her2_cdrh3_151   DLSSYYYAFD      7  yes    not in provided data
+her2_cdrh3_152   DSSLAAGAFD      8  yes    not in provided data
+her2_cdrh3_153   YDYYSSYYFY      9  yes    not in provided data
+her2_cdrh3_154   YVPSTVPAFD      8  yes    not in provided data
+her2_cdrh3_155   ATLAYDYAFD      7  yes    not in provided data
+her2_cdrh3_156   SRSAVDYAFD      7  yes    not in provided data
+her2_cdrh3_157   WASLYYYYFD      7  yes    not in provided data
+her2_cdrh3_158   YGSDTLRAFD      6  yes    not in provided data
+her2_cdrh3_159   DLSSSSYAFD      7  yes    not in provided data
+her2_cdrh3_160   STSATGHAFD      8  yes    not in provided data
+her2_cdrh3_161   STAAVSYAFE      8  yes    not in provided data
+her2_cdrh3_162   SLVPYYYDFD      8  yes    not in provided data
+her2_cdrh3_163   SSTASDKAFD      8  yes    not in provided data
+her2_cdrh3_164   DAPYGSRAFD      7  yes    not in provided data
+her2_cdrh3_165   ERYSGLYAFD      6  yes    not in provided data
+her2_cdrh3_166   STSAVDYAHD      7  yes    not in provided data
+her2_cdrh3_167   DLSSVFRAFD      7  yes    not in provided data
+her2_cdrh3_168   WGSLSFYAMD      3  yes    not in provided data  [exactly 3: at the 70 % identity limit, no margin]
+her2_cdrh3_169   TPTGTLYAFD      7  yes    not in provided data
+her2_cdrh3_170   DMSLTSYAFD      7  yes    not in provided data
+her2_cdrh3_171   YASTSAYYFD      8  yes    not in provided data
+her2_cdrh3_172   WGSPGFYAMD      2  NO     not in provided data  [<3 mutations: >70 % identical to trastuzumab, fails]
+her2_cdrh3_173   WGPSGFYYFD      4  yes    not in provided data
+her2_cdrh3_174   WTSAVGYAFD      6  yes    not in provided data
+her2_cdrh3_175   STSSVGYAFD      7  yes    not in provided data
+her2_cdrh3_176   WKSLYEYYFD      7  yes    not in provided data
+her2_cdrh3_177   DSPTYGYAHD      7  yes    not in provided data
+her2_cdrh3_178   STSSVDYAFD      7  yes    not in provided data
+her2_cdrh3_179   DLSYHIHAFD      8  yes    not in provided data
+her2_cdrh3_180   WPYGSYYAFD      6  yes    not in provided data
+her2_cdrh3_181   YASSSNLAYD      8  yes    not in provided data
+her2_cdrh3_182   STAAVDYAFD      7  yes    not in provided data
+her2_cdrh3_183   WSYSVGYAMD      5  yes    not in provided data
+her2_cdrh3_184   YSSSYFKAFD      7  yes    not in provided data
+her2_cdrh3_185   SLSLSNYAFD      7  yes    not in provided data
+her2_cdrh3_186   WHSLYYYYFD      7  yes    not in provided data
+her2_cdrh3_187   DMSGSSLAFD      8  yes    not in provided data
+her2_cdrh3_188   DMSLSDHAFD      8  yes    not in provided data
+her2_cdrh3_189   WRSLYYYEFD      7  yes    not in provided data
+her2_cdrh3_190   YTPYSVPAFD      8  yes    not in provided data
+her2_cdrh3_191   WGPPGFYAFD      3  NO     already measured: FACS high  [exactly 3: at the 70 % identity limit, no margin]
+her2_cdrh3_192   WASLAEYYFD      7  yes    not in provided data
+her2_cdrh3_193   SYSVSSSSSS     10  yes    not in provided data
+her2_cdrh3_194   STSSVDYAFD      7  yes    not in provided data
+her2_cdrh3_195   STAAYSYAFD      7  yes    not in provided data
+her2_cdrh3_196   DLSFYDRAFD      8  yes    not in provided data
+her2_cdrh3_197   SRSYSYAYFD      9  yes    not in provided data
+her2_cdrh3_198   STSSVSYAFD      7  yes    not in provided data
+her2_cdrh3_199   DMPGYSYAFD      7  yes    not in provided data
+
+193 of 200 designs clear both checks: not in the provided data, and 3+ mutations from trastuzumab.
+This is a stand-in. Full-sequence identity against known antibodies is not checked here, and the organisers' abguard tool is the final word.
